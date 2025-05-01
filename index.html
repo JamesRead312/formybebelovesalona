@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Alona</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing">
+  <div class="centered">
+    <h1>Hi Bebelove!</h1>
+    <button onclick="startLove()">Click Me</button>
+  </div>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function startLove() {
+      document.getElementById('bg-music').play();
+      window.location.href = "gallery.html";
+    }
+  </script>
+</body>
+</html>

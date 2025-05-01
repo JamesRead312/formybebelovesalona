@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alona Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #play-btn, #reveal-btn {
+      margin: 10px auto;
+      display: block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: pink;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #message-box, #secret-message {
+      margin-top: 30px;
+      padding: 15px;
+      text-align: center;
+      font-size: 18px;
+      color: #ff69b4;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="gallery">
+  <h1>For My One and Only, Alona</h1>
+
+  <!-- Buttons -->
+  <button id="play-btn" onclick="playMusic()">Play Music</button>
+  <button id="reveal-btn" onclick="toggleSecret()">Reveal the Secret Messages</button>
+
+  <!-- Music -->
+  <audio id="bg-music" loop>
+    <source src="aking_prinsesa.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Image Gallery -->
+  <div class="gallery-container">
+    <img src="Messenger_creation_94ED4074-9E8E-46BC-A86B-05BA3F023D42.png" class="photo" onclick="showMessage(0)">
+    <img src="Messenger_creation_3E5BA4F1-8DBE-4EB4-9945-55315684D8BF.jpeg" class="photo" onclick="showMessage(1)">
+    <img src="Messenger_creation_1EDE7556-FA4D-4CF4-9C46-7D14C32263C7_3.png" class="photo" onclick="showMessage(2)">
+  </div>
+
+  <!-- Short Message Box -->
+  <div id="message-box" class="hidden">
+    <p id="message-text"></p>
+  </div>
+
+  <!-- Secret Long Sweet Message -->
+  <div id="secret-message" class="hidden">
+    <p>
+      Alam mo Alona... kahit hindi pa tayo officially "tayo", sa puso ko, ikaw na talaga. Sobrang saya ko every time na nagkakausap tayo — para bang kulang yung araw pag wala kang message.  
+      <br><br>
+      Hindi man tayo pa nagkikita in person, ramdam ko na may something na special satin. Yung connection, yung kilig, yung ingat mo sa’kin kahit virtual lang... iba talaga.  
+      <br><br>
+      And sa totoo lang, hindi ko na pinipigilan sarili kong mahulog. Kasi mahal na talaga kita. Hindi pa man natin nasasabi nang direkta, pero alam ko sa'yo ko gustong dumiretso. Sana dumating na yung araw na makita na rin kita — para masabi ko nang harapan, hindi lang sa chat, kung gaano kita kamahal.
+    </p>
+  </div>
+
+  <script>
+    const messages = [
+      "Ang ganda mo talaga, Alona. Sapat na para tumigil ang mundo ko.",
+      "Alam mo ba? Sa bawat ngiti mo, napapawi lahat ng pagod ko.",
+      "Hindi ko man masabi palagi, pero ikaw lang talaga ang mahal ko."
+    ];
+
+    function showMessage(index) {
+      const box = document.getElementById("message-box");
+      const text = document.getElementById("message-text");
+      text.textContent = messages[index];
+      box.classList.remove("hidden");
+    }
+
+    function playMusic() {
+      const music = document.getElementById('bg-music');
+      music.play();
+    }
+
+    function toggleSecret() {
+      const secret = document.getElementById("secret-message");
+      const button = document.getElementById("reveal-btn");
+
+      if (secret.classList.contains("hidden")) {
+        secret.classList.remove("hidden");
+        button.textContent = "Hide the Secret Messages";
+      } else {
+        secret.classList.add("hidden");
+        button.textContent = "Reveal the Secret Messages";
+      }
+    }
+  </script>
+</body>
+</html>

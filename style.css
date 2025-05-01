@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.landing {
+  background: linear-gradient(to right, pink, lightcoral);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+.landing button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background: red;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px white;
+}
+
+.gallery {
+  background: mistyrose;
+  text-align: center;
+  padding: 20px;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #aaa;
+  transition: transform 0.3s;
+}
+
+.photo:hover {
+  transform: scale(1.1);
+}
+
+#message-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 192, 203, 0.8);
+  border-radius: 20px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  color: #333;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+.animate {
+  display: block !important;
+  animation: popUp 1s ease;
+}
+
+@keyframes popUp {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
